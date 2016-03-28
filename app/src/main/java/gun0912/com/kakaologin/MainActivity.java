@@ -30,8 +30,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        KakaoSDK.init(new LoginKakaoActivity.KakaoSDKAdapter());
 
+        if(KakaoSDK.getAdapter() == null) {
+            KakaoSDK.init(new LoginKakaoActivity.KakaoSDKAdapter());
+        }
 
     }
 
